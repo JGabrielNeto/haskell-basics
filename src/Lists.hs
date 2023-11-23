@@ -34,5 +34,17 @@ product originalList        -- multiplies all elements == 24
 
 onIndex = head (drop i xs)  -- does the same as the !! operator == [0,2..100] `onIndex` 39 == 78
 
+[x^2 | x <- [1..5]]         -- output: [1,4,9,16,25]
+
+[toLower c | c <- "HELLO"]  -- hello
+
+[(x, even x) | x <- [1,2]]  -- [(1,False),(2,True)]
+
+[(x,y) | x <- [1..4], y <- [4..5]] 
+                            -- [(1,4),(1,5),(2,4),(2,5),(3,4),(3,5),(4,4),(4,5)]
+
+[x | x <- [1..10], even x]  -- [2,4,6,8,10]
+
+zip [1,2,3] [4,5,6]         -- [(1,4),(2,5),(3,6)]
 
 

@@ -14,7 +14,6 @@ quadraticRoots a b c  = (((-b) + sqrt (b ^ 2 - 4 * a * c)) / (2 * a),
 
 coolerQuadraticRoots :: (Floating a, Ord a) => a -> a -> a -> (a, a)
 coolerQuadraticRoots a b c
-  | a == 0 && b > 0 = solveForNonQuadratic b c                   -- case is not quadratic, solve for non quadratic
   | delta >= 0      = (x1, x2)                                   -- happy path
   | otherwise       = error "Delta can't be a negative number."  -- otherwise, throws an error
   where
@@ -23,4 +22,3 @@ coolerQuadraticRoots a b c
     quadratic dr = ((-b) + dr) / (2 * a)
     x1 = quadratic deltaRoot
     x2 = quadratic (-deltaRoot)
-    solveForNonQuadratic b c = ((-c) / b, (-c) / b)
